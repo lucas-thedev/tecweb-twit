@@ -1,0 +1,29 @@
+p {
+    margin-left: 40px;
+    margin-right: 150px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+li {
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}   
+
+ul {
+    list-style: none;
+}
+
+span.texto-do-meio {
+    margin-left: 24px;
+    margin-right: 150px;
+}
+
+div#conteudo {
+    width: 280px;
+    height: 200px;
+    background-color: #ffffff;
+}
