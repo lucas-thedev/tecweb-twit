@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
 import { Teste2Component } from './teste2/teste2.component';
 import { PostComponent } from './post/post.component';
+import { MenuListComponent } from './menu-list/menu-list.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TesteComponent,
     Teste2Component,
-    PostComponent
+    PostComponent,
+    MenuListComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
