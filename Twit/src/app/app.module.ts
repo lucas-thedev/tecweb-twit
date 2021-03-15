@@ -8,6 +8,7 @@ import { Teste2Component } from './teste2/teste2.component';
 import { PostComponent } from './post/post.component';
 import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuComponent } from './menu/menu.component';
+import { FriendsComponent } from './friends/friends.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuComponent } from './menu/menu.component';
     Teste2Component,
     PostComponent,
     MenuListComponent,
-    MenuComponent
+    MenuComponent,
+    FriendsComponent,
   ],
   imports: [
     BrowserModule,
