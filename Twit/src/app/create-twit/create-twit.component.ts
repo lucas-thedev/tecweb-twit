@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTwitComponent implements OnInit {
 
-  constructor() { }
+  tweet = '';
+  tweetOBJ = {
+    tweet: ''
+  }
+  tweetList: string[] = []
+
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
+  }
+
+  setTweetLen () {
+    return this.tweet.length;
+  }
+  
+  sendTweet() {
+    if (this.tweet !== '') {
+      this.tweetList.push(this.tweet);
+      this.tweet = '';
+    }
   }
 
 }
