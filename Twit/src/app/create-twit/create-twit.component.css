@@ -1,0 +1,10 @@
+textarea {
+  resize: none;
+}
+
+.text-box {
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+  min-height: 150px;
+  border-radius: 6px;
+}
