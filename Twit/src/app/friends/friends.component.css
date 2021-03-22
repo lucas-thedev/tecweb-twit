@@ -1,0 +1,22 @@
+h2 {
+    margin-left: 40px;
+    margin-right: 150px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+li {
+    color: black;
+    display:flex;
+}   
+
+ul {
+    list-style: none;
+}
+
+div#componente {
+    width: 280px;
+    height: 600px;
+    background-color: #cfcfcf;
+}
