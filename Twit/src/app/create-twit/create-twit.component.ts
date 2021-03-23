@@ -18,6 +18,11 @@ export class CreateTwitComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tweets = localStorage.getItem('ttlist')
+    if (tweets){
+      this.tweetList = JSON.parse(tweets)
+      console.log(this.tweetList)
+    }
   }
 
   setTweetLen () {
@@ -27,6 +32,8 @@ export class CreateTwitComponent implements OnInit {
   sendTweet() {
     if (this.tweet !== '') {
       this.tweetList.push(this.tweet);
+      localStorage.setItem('ttlist', JSON.stringify(this.tweetList))
+      console.log(this.tweetList)
       this.tweet = '';
     }
   }
