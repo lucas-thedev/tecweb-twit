@@ -1,14 +1,19 @@
 .wrapper {
-    background-color: #e8f5fd;
-    height: 100%;
-    padding: 20px 45px 20px 45px;
+  background-color: #e8f5fd;
+  height: 100%;
+  padding: 20px 45px 20px 45px;
 }
 .container {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-areas: "menu post friends";
-  }
-  
-  body {
-      height: 100%;
-  }
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-areas: "menu post friends";
+}
+
+body {
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.middle {
+  margin: 0px 50px;
+}

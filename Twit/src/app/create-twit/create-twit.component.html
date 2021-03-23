@@ -1,12 +1,10 @@
 <div class="text-box">
+  <div></div>
   <div>
-
+    <textarea [(ngModel)]="tweet" maxlength="280"></textarea>
+    <div id="length">{{ setTweetLen() }}/280</div>
   </div>
   <div>
-    <textarea [(ngModel)]='tweet' maxlength='280'></textarea>
-    <div>{{ setTweetLen() }}/280</div>
-  </div>
-  <div>
-    <button class='submit-btn' (click)='sendTweet()'>Enviar</button>
+    <button class="submit-btn" (click)="sendTweet()">Enviar</button>
   </div>
 </div>

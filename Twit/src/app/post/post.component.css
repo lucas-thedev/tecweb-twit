@@ -9,13 +9,8 @@ header {
   justify-content: space-between;
 }
 
-header img#dots {
-  transition: 0.5s all ease;
-}
-
 header img#dots:hover {
   cursor: pointer;
-  transform: scale(1.5);
 }
 
 section.avatar {
@@ -66,7 +61,7 @@ section.text {
 
 figure {
   margin: 0;
-  height: 50vh;
+  height: 30vh;
 }
 
 figure#post-photo > img {
