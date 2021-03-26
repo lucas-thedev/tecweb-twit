@@ -4,6 +4,7 @@
   padding: 20px 45px 20px 45px;
 }
 .container {
+  margin: 20px;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-template-areas: "menu post friends";
