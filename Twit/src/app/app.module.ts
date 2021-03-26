@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateTwitComponent } from './create-twit/create-twit.component';
 import { PostComponent } from './post/post.component';
-import { MenuListComponent } from './menu-list/menu-list.component';
 import { MenuComponent } from './menu/menu.component';
 import { FriendsComponent } from './friends/friends.component';
 
@@ -15,7 +14,6 @@ import { FriendsComponent } from './friends/friends.component';
     AppComponent,
     CreateTwitComponent,
     PostComponent,
-    MenuListComponent,
     MenuComponent,
     FriendsComponent,
   ],
