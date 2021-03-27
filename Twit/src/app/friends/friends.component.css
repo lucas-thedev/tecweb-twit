@@ -2,12 +2,12 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 h2 {
   color: white;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 20px;
+  font-size: 16px;
 }
 
 li {
@@ -24,9 +24,9 @@ li {
 }
 
 .img-amigo {
- width: 50px;
- height: 50px;
- border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .titulo-amigos {
@@ -47,9 +47,72 @@ ul {
 }
 
 div#componente {
-  height: 100%;
+  height: 70%;
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
   padding: 50px 20px 20px 20px;
   position: relative;
-  
+}
+
+div#search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+div#search input {
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  flex: 1;
+
+  color: #202841;
+  /*horizontal vertical blur-radius spread-radius*/
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+
+  padding: 7px 20px;
+  font-size: 11px;
+
+  margin-right: 20px;
+}
+
+section.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.avatar p {
+  margin: 0;
+  color: #202841;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+section.avatar strong {
+  color: #1b86f9;
+}
+
+section.avatar span {
+  color: #919eab;
+  font-size: 10px;
+}
+
+section.avatar figure {
+  margin: 0;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+section.avatar figure img {
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+div.column {
+  flex: 1;
+  margin-left: 12px;
 }
