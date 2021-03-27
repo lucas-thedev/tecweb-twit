@@ -1,34 +1,13 @@
 <div id="componente">
-    <h2>Lista de amigos</h2>
+    <div class="titulo-amigos"><h2>Lista de amigos</h2></div>
 
     <ul>
-        <li>
-            <img src="../../assets/boy.png">
+        <li *ngFor="let amigo of amigos;let i = index" >
+            <img src="{{amigos[i].foto}}" class="img-amigo">
             <div>
-            <span>Pedro Fabriciano</span>
-            <h5>Ok</h5>
+            <span class="nome-amigo">{{amigos[i].nome}}</span>
         </div>
         </li>
-        <li>
-            <img src="../../assets/boy.png">
-            <div>
-            <span>Daniel Oliveira</span>
-            <h5>Bom dia, tudo bem?</h5>
-        </div>
-        </li>
-        <li>
-            <img src="../../assets/boy.png">
-            <div>
-            <span>Julio Silva</span>
-            <h5>Você vai me responder qu..</h5>
-        </div>
-        </li>
-        <li>
-            <img src="../../assets/boy.png">
-            <div>
-            <span>henrique Almeida</span>
-            <h5>Pode ser amanhã as 8h?</h5>
-        </div>
-        </li>
+
     </ul>
 </div>
