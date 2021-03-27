@@ -22,7 +22,16 @@
     </figure>
     <div id="actions">
       <div (click)="updateLikeCount(i)">
-        <img src="../../assets/blue-heart.svg" alt="curtir" />
+        <img
+          src="../../assets/blue-heart.svg"
+          alt="curtir"
+          *ngIf="post.likesCount === 0"
+        />
+        <img
+          src="../../assets/liked.svg"
+          alt="curtir"
+          *ngIf="post.likesCount === 1"
+        />
         <span>{{ post.likesCount }}</span>
       </div>
       <div>
