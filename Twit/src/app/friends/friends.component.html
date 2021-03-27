@@ -1,13 +1,27 @@
 <div id="componente">
-    <div class="titulo-amigos"><h2>Lista de amigos</h2></div>
+  <div class="titulo-amigos"><h2>Lista de amigos</h2></div>
 
-    <ul>
-        <li *ngFor="let amigo of amigos;let i = index" >
-            <img src="{{amigos[i].foto}}" class="img-amigo">
+  <ul>
+    <div id="search">
+      <input type="text" name="search" placeholder="Pesquisar um amigo" />
+      <img src="../../assets/icons/search.svg" />
+    </div>
+    <li *ngFor="let amigo of amigos; let i = index">
+      <!-- <img src="{{amigos[i].foto}}" class="img-amigo">
             <div>
-            <span class="nome-amigo">{{amigos[i].nome}}</span>
+            <span class="nome-amigo">{{amigos[i].nome}}</span> -->
+      <!-- </div> -->
+      <section class="avatar">
+        <figure>
+          <img src="{{ amigos[i].foto }}" alt="post photo" />
+        </figure>
+        <div class="column">
+          <p>
+            {{ amigos[i].nome }}
+          </p>
+          <span>{{ amigos[i].msg || "" }}</span>
         </div>
-        </li>
-
-    </ul>
+      </section>
+    </li>
+  </ul>
 </div>

@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class FriendsComponent implements OnInit {
 
   amigos = [{
-   nome:"Pedro Fabriciano", foto:"../../assets/boy.png" 
+   nome:"Pedro Fabriciano", foto:"../../assets/boy.png" , msg: 'Olá, Boa noite!'
   },{
-    nome:"Daniel Oliveira", foto:"../../assets/images/V.png"
+    nome:"Daniel Oliveira", foto:"../../assets/images/V.png", msg: 'Bom dia, tudo bem ?'
   },{
-    nome:"Julio Silva", foto:"../../assets/boy.png"
+    nome:"Julio Silva", foto:"../../assets/boy.png", msg: 'Pode ser às 8h?'
   },{
-    nome:"Henrique Almeida", foto:"../../assets/boy.png"
+    nome:"Henrique Almeida", foto:"../../assets/boy.png", msg: 'Ok.'
   }
   ]
   constructor() { }
