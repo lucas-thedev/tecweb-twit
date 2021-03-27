@@ -5,7 +5,10 @@
         <img src="{{ post.avatar }}" alt="post photo" />
       </figure>
       <div class="column">
-        <p>{{ post.user || "" }} shared a <strong>album</strong></p>
+        <p>
+          {{ post.user || "" }} shared a
+          <strong>{{ post.image ? "album" : "post" }}</strong>
+        </p>
         <span>6 hours ago</span>
       </div>
     </section>
