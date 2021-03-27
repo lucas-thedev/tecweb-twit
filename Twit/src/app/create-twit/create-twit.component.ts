@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "./../app.service";
+import {IPost} from '../types/index'
 
 @Component({
   selector: 'app-create-twit',
@@ -7,22 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateTwitComponent implements OnInit {
 
+
   tweet = '';
   tweetOBJ = {
-    tweet: ''
+    user: 'Quan Ha',
+    action: '',
+    text: '',
+    avatar: '../../assets/boy.png',
+    image: '',
+    likesCount: 0,
+    commentCount: 0,
+    retwittCount: 0,
+    comments: []
   }
-  tweetList: string[] = []
+  tweetList: IPost[] = []
 
-  constructor() {
-    
+  constructor(private data: DataService) {
+    this.data.currentMessage.subscribe(message => this.tweetList.push(message));
   }
 
   ngOnInit(): void {
-    const tweets = localStorage.getItem('ttlist')
-    if (tweets){
-      this.tweetList = JSON.parse(tweets)
-      console.log(this.tweetList)
-    }
   }
 
   setTweetLen () {
@@ -31,9 +37,8 @@ export class CreateTwitComponent implements OnInit {
   
   sendTweet() {
     if (this.tweet !== '') {
-      this.tweetList.push(this.tweet);
-      localStorage.setItem('ttlist', JSON.stringify(this.tweetList))
-      console.log(this.tweetList)
+      this.tweetOBJ.text = this.tweet;
+      this.data.changeMessage({...this.tweetOBJ})
       this.tweet = '';
     }
   }

@@ -1,4 +1,4 @@
-<div class="post" *ngFor="let post of posts">
+<div class="post" *ngFor="let post of posts; let i = index">
   <header>
     <section class="avatar">
       <figure>
@@ -16,14 +16,14 @@
     {{ post.text }}
   </section>
 
-  <section id="photo" *ngIf="post.image">
-    <figure id="post-photo">
+  <section id="photo">
+    <figure id="post-photo" *ngIf="post.image">
       <img src="../../assets/post-photo.png" alt="foto do post" />
     </figure>
     <div id="actions">
-      <div>
+      <div (click)="updateLikeCount(i)">
         <img src="../../assets/blue-heart.svg" alt="curtir" />
-        <span>87</span>
+        <span>{{ post.likesCount }}</span>
       </div>
       <div>
         <img src="../../assets/comments.svg" alt="comentários" />
