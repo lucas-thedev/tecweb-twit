@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
   }
 
   updateLikeCount(index: number) {
-    this.posts[index].likesCount = this.posts[index].likesCount + 1;
+    this.posts[index].likesCount = this.posts[index].likesCount === 1 ? 0 : 1;
   }
 
 }
