@@ -4,31 +4,26 @@
 
 textarea {
   resize: none;
-
   width: 100%;
-  width: -moz-available; /* WebKit-based browsers will ignore this. */
-  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: -moz-available;
+  width: -webkit-fill-available;
   width: fill-available;
-
-  min-height: 100px;
-
-  border-radius: 10px;
-  border: 1px solid #cecece;
+  min-height: 50px;
   outline: none;
-
   color: #202841;
-  /*horizontal vertical blur-radius spread-radius*/
-  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
-
   padding: 15px;
-  font-size: 20px;
+  font-size: 16px;
+  border: none;
 }
 
 .text-box {
   background-color: white;
-  /* padding: 20px 20px 20px 20px; */
   min-height: 150px;
   border-radius: 6px;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 15px;
 }
 
 .submit-btn {
@@ -38,10 +33,11 @@ textarea {
   height: 34px;
   width: 100px;
   border-radius: 6px;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 #length {
-  float: right;
   color: #08a0e9;
   font-size: 16px;
   font-weight: bold;

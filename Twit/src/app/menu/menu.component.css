@@ -32,7 +32,7 @@ li:hover {
     color: #ffffff;
     cursor: pointer;
     border-radius: 6px;
-    background-color: #1F8EFA;
+    background-color: #08a0e9;
 }
 
 ul {
@@ -41,10 +41,15 @@ ul {
 }
 
 div#conteudo {
-    width: 280px;
-    height: 190px;
+    width: 100%;
+    min-height: 190px;
     border-radius: 6px;
     background-color: #ffffff;
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
     padding: 25px;
+}
+
+.title {
+    color: #08a0e9;
+    font-weight: 800;
 }
