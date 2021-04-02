@@ -5,6 +5,24 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #c8d5e2;
+    border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #c8d5e2;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track{
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: inset 7px 10px 12px #f0f0f0;
 }

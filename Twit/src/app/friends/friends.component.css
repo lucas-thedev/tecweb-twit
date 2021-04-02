@@ -36,9 +36,6 @@ li {
   display: flex;
   align-items: center;
   border-radius: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 ul {
@@ -47,10 +44,10 @@ ul {
 }
 
 div#componente {
-  height: 70%;
+  height: fit-content;
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
-  padding: 50px 20px 20px 20px;
-  position: relative;
+  background-color: white ;
+  border-radius: 6px;
 }
 
 div#search {

@@ -15,6 +15,9 @@ export class FriendsComponent implements OnInit {
     nome:"Julio Silva", foto:"../../assets/boy.png", msg: 'Pode ser às 8h?'
   },{
     nome:"Henrique Almeida", foto:"../../assets/boy.png", msg: 'Ok.'
+
+  },{
+    nome:"Henrique Almeida", foto:"../../assets/boy.png", msg: 'Ok.'
   }
   ]
   constructor() { }
