@@ -1,6 +1,16 @@
 <div class="wrapper">
-  <div class="d-flex align-items-center">
-    <img src="assets/icons/logo-white.svg" width="30" class="icon"/>
-    <h2 class="title my-0 mx-3">TWIT</h2>
+  <div class="w-100 d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <img src="assets/icons/logo-white.svg" width="30" class="icon"/>
+      <h2 class="title my-0 mx-3">TWIT</h2>
+    </div>
+    <div class="menu-dropdown menu-icon" (click)="callMenu()">
+      <img src="assets/icons/list.svg" width="30" class="icon d-block d-lg-none" />
+      <div [ngClass]="dropdownClass">
+        <app-menu></app-menu>
+      </div>
+    </div>
   </div>
 </div>
+
+

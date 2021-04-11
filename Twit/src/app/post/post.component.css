@@ -127,17 +127,14 @@ section#photo section#comment figure img {
 section#photo section#comment input {
   margin: 0px 12px;
   flex: 1;
-
   border-radius: 100px;
   border: none;
   outline: none;
-
   color: #202841;
-  /*horizontal vertical blur-radius spread-radius*/
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
-
   padding: 7px 20px;
   font-size: 11px;
+  width: calc(100% - 80px);
 }
 
 section#photo section#comment button {
