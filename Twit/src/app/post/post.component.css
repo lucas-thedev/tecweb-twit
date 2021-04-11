@@ -1,0 +1,159 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.post {
+  margin: 50px 0;
+  background-color: white;
+  border-radius: 6px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img#dots:hover {
+  cursor: pointer;
+}
+
+section.avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section.avatar p {
+  margin: 0;
+  color: #202841;
+  font-size: 14px;
+}
+
+section.avatar strong {
+  color: #1b86f9;
+}
+
+section.avatar span {
+  color: #919eab;
+  font-size: 10px;
+}
+
+section.avatar figure {
+  margin: 0;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+section.avatar figure img {
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+div.column {
+  flex: 1;
+  margin-left: 12px;
+}
+
+section.text {
+  flex: 1;
+  margin: 20px auto;
+}
+
+figure {
+  margin: 0;
+  height: 250px;
+}
+
+figure#post-photo > img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 8px;
+  /*horizontal vertical blur-radius spread-radius*/
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.27);
+}
+
+section#photo div#actions {
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+}
+
+section#photo div#actions > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-right: 32px;
+}
+
+section#photo div#actions > div img {
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+section#photo div#actions > div span {
+  font-size: 12px;
+}
+
+section#photo section#comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+section#photo section#comment figure {
+  margin: 0;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+section#photo section#comment figure img {
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+section#photo section#comment input {
+  margin: 0px 12px;
+  flex: 1;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  color: #202841;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+  padding: 7px 20px;
+  font-size: 11px;
+  width: calc(100% - 80px);
+}
+
+section#photo section#comment button {
+  outline: none;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  background-color: #2492fa;
+
+  padding: 7px 10px;
+  color: #fff;
+}
+
+div.post {
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+  padding: 20px;
+}
