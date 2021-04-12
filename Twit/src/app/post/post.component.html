@@ -26,29 +26,29 @@
     <div id="actions">
       <div (click)="updateLikeCount(i)">
         <img
-          src="../../assets/blue-heart.svg"
+          src="assets/blue-heart.svg"
           alt="curtir"
           *ngIf="post.likesCount === 0"
         />
         <img
-          src="../../assets/liked.svg"
+          src="assets/liked.svg"
           alt="curtir"
           *ngIf="post.likesCount === 1"
         />
         <span>{{ post.likesCount }}</span>
       </div>
       <div>
-        <img src="../../assets/comments.svg" alt="comentários" />
+        <img src="assets/comments.svg" alt="comentários" />
         <span>20</span>
       </div>
       <div>
-        <img src="../../assets/retwitt.svg" alt="retwitts" />
+        <img src="assets/retwitt.svg" alt="retwitts" />
         <span>13</span>
       </div>
     </div>
     <section id="comment">
       <figure>
-        <img src="../../assets/girl.png" alt="post photo" />
+        <img src="assets/girl.png" alt="post photo" />
       </figure>
       <input
         type="text"
@@ -56,7 +56,7 @@
         placeholder="Escrever um comentário..."
       />
       <button>
-        <img src="../../assets/send.svg" alt="enviar comentário" />
+        <img src="assets/send.svg" alt="enviar comentário" />
       </button>
     </section>
   </section>
