@@ -8,8 +8,8 @@ import {Router} from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  imgFeed:string = '../../assets/icons/feed.svg';
-  imgUser:string = '../../assets/icons/user.svg';
+  imgFeed:string = 'assets/icons/feed.svg';
+  imgUser:string = 'assets/icons/user.svg';
 
   constructor(private router: Router) { }
 
@@ -17,11 +17,11 @@ export class MenuComponent implements OnInit {
   }
 
   toggleFeedIcon(state:string) {
-    this.imgFeed = state === 'over' ? '../../assets/icons/feed-white.svg' : '../../assets/icons/feed.svg';
+    this.imgFeed = state === 'over' ? 'assets/icons/feed-white.svg' : 'assets/icons/feed.svg';
   }
 
   toggleUserIcon(state:string) {
-    this.imgUser = state === 'over' ? '../../assets/icons/user-white.svg' : '../../assets/icons/user.svg';
+    this.imgUser = state === 'over' ? 'assets/icons/user-white.svg' : 'assets/icons/user.svg';
   }
 
   navigateToProfile() {
