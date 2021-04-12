@@ -15,7 +15,7 @@ export class CreateTwitComponent implements OnInit {
     user: 'Quan Ha',
     action: '',
     text: '',
-    avatar: '../../assets/boy.png',
+    avatar: 'assets/boy.png',
     image: '',
     likesCount: 0,
     commentCount: 0,
