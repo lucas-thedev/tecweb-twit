@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <div class="row d-flex- justify-content-center">
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="login-box py-3">
+          <div class="d-flex justify-content-center pt-3">
+            <img src="assets/icons/logo.svg" width="80"/>
+          </div>
+          <img id="return" src="assets/left-arrow.svg" (click)="return()" width="20" height="20"/>
+          <div class="text-center">
+            <h2><strong>TWIT</strong></h2>
+          </div>
+          <div class="d-flex justify-content-center aling-items-center flex-column px-5">
+            <div class="my-1 w-100">
+                <p class="label">Nome</p>
+                <input class="input-login" type="text"/>
+              </div>
+              <div class="my-1 w-100">
+                <p class="label">E-mail</p>
+                <input class="input-login" type="text"/>
+              </div>
+            <div class="my-1 w-100">
+              <p class="label">Usuário</p>
+              <input class="input-login" type="text"/>
+            </div>
+            <div class="my-1 mb-4">
+              <p class="label">Senha</p>
+              <input class="input-login" type="password"/>
+            </div>
+            <div class="mb-3">
+              <button (click)="create()" class="button-login">CADASTRAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
