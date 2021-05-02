@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {IPost} from '../types/index'
-import { DataService } from "../../services/app.service";
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -10,18 +11,19 @@ import { DataService } from "../../services/app.service";
 
 export class PostComponent implements OnInit {
 
-  storage = []
-  posts: IPost[] = []
 
-  constructor(private data: DataService) { 
-    this.data.currentMessage.subscribe((message: IPost) => this.posts.unshift(message))
+  @Input() posts: IPost[] = [];
+  storage = []
+
+  constructor(private http: HttpClient, private router: Router) { 
   }
 
   ngOnInit(): void {
+    
   }
 
   updateLikeCount(index: number) {
-    this.posts[index].likesCount = this.posts[index].likesCount === 1 ? 0 : 1;
+    this.posts[index].count_likes = this.posts[index].count_likes === 1 ? 0 : 1;
   }
 
 }

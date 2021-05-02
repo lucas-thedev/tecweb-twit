@@ -12,19 +12,19 @@
           <div class="d-flex justify-content-center aling-items-center flex-column px-5">
             <div class="my-1 w-100">
                 <p class="label">Nome</p>
-                <input class="input-login" type="text"/>
+                <input class="input-login" type="text" [(ngModel)]='person.name' />
               </div>
               <div class="my-1 w-100">
                 <p class="label">E-mail</p>
-                <input class="input-login" type="text"/>
+                <input class="input-login" type="text" [(ngModel)]='person.email' />
               </div>
             <div class="my-1 w-100">
               <p class="label">Usuário</p>
-              <input class="input-login" type="text"/>
+              <input class="input-login" type="text" [(ngModel)]='person.username'/>
             </div>
             <div class="my-1 mb-4">
               <p class="label">Senha</p>
-              <input class="input-login" type="password"/>
+              <input class="input-login" type="password" [(ngModel)]='person.password' />
             </div>
             <div class="mb-3">
               <button (click)="create()" class="button-login">CADASTRAR</button>

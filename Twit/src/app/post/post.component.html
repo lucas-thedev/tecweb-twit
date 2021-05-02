@@ -2,12 +2,12 @@
   <header>
     <section class="avatar">
       <figure>
-        <img src="{{ post.avatar }}" alt="post photo" />
+        <img src="assets/girl.png" alt="post photo" />
       </figure>
       <div class="column">
         <p>
-          {{ post.user || "" }} shared a
-          <strong>{{ post.image ? "album" : "post" }}</strong>
+          <strong style="color: black">{{ post.username }}</strong> shared a
+          <strong>post</strong>
         </p>
         <span>6 hours ago</span>
       </div>
@@ -16,26 +16,23 @@
   </header>
 
   <section class="text">
-    {{ post.text }}
+    {{ post.content }}
   </section>
 
   <section id="photo">
-    <figure id="post-photo" *ngIf="post.image">
-      <img src="../../assets/post-photo.png" alt="foto do post" />
-    </figure>
     <div id="actions">
       <div (click)="updateLikeCount(i)">
         <img
           src="../../assets/blue-heart.svg"
           alt="curtir"
-          *ngIf="post.likesCount === 0"
+          *ngIf="post.count_likes === 0"
         />
         <img
           src="../../assets/liked.svg"
           alt="curtir"
-          *ngIf="post.likesCount === 1"
+          *ngIf="post.count_likes >= 1"
         />
-        <span>{{ post.likesCount }}</span>
+        <span>{{ post.count_likes }}</span>
       </div>
       <div>
         <img src="../../assets/comments.svg" alt="comentários" />
@@ -43,7 +40,7 @@
       </div>
       <div>
         <img src="../../assets/retwitt.svg" alt="retwitts" />
-        <span>13</span>
+        <span> {{ post.count_retwiit }} </span>
       </div>
     </div>
     <section id="comment">

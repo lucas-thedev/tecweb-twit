@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../services/app.service";
 import {IPost} from '../types/index'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-twit',
@@ -8,39 +8,38 @@ import {IPost} from '../types/index'
   styleUrls: ['./create-twit.component.css']
 })
 export class CreateTwitComponent implements OnInit {
-
-
-  tweet = '';
-  tweetOBJ = {
-    user: 'Quan Ha',
-    action: '',
-    text: '',
-    avatar: '../../assets/boy.png',
-    image: '',
-    likesCount: 0,
-    commentCount: 0,
-    retwittCount: 0,
-    comments: []
+  
+  tweet: IPost = {
+    id_user: 0,
+    created_at: '',
+    count_likes: 0,
+    count_retwiit: 0,
+    content: '',
+    is_comment: '',
+    updated_at: '',
   }
-  tweetList: IPost[] = []
 
-  constructor(private data: DataService) {
-    this.data.currentMessage.subscribe(message => this.tweetList.push(message));
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
   }
 
   setTweetLen () {
-    return this.tweet.length;
+    return this.tweet.content.length;
   }
   
   sendTweet() {
-    if (this.tweet !== '') {
-      this.tweetOBJ.text = this.tweet;
-      this.data.changeMessage({...this.tweetOBJ})
-      this.tweet = '';
-    }
+    let date = new Date()
+    let user = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
+    this.tweet.id_user = user ? +user : 0
+    this.tweet.created_at = date.toISOString().slice(0, 19).replace('T', ' ')
+    this.tweet.updated_at = date.toISOString().slice(0, 19).replace('T', ' ')
+    this.tweet.is_comment = 'false'
+
+    this.http.post(`http://localhost:3000/twit/${user}`, this.tweet).subscribe((res: any) => {
+      
+    });
   }
 
 }

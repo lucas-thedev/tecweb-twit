@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {IPost} from '../types/index'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -19,11 +21,20 @@ export class ProfileComponent implements OnInit {
     "name": ""
   }
 
-  constructor(private http: HttpClient) { }
+  posts: IPost[] = [];
+
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/users/2').subscribe((res: any) => {
+
+    let url = this.router.url.split('/')
+
+    this.http.get(`http://localhost:3000/users/${url[url.length - 1]}`).subscribe((res: any) => {
       this.person = res[0]
+    });
+    this.http.get(`http://localhost:3000/twit/${url[url.length - 1]}`).subscribe((res: any) => {
+      
+      this.posts = res
     });
   }
 

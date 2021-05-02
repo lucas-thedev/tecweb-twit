@@ -11,11 +11,11 @@
         <div class="d-flex justify-content-center aling-items-center flex-column px-5">
           <div class="my-3 w-100">
             <p class="label">Usuário</p>
-            <input class="input-login" type="text"/>
+            <input class="input-login" type="text" [(ngModel)]='user.username' />
           </div>
           <div class="mb-4">
             <p class="label">Senha</p>
-            <input class="input-login" type="password"/>
+            <input class="input-login" type="password" [(ngModel)]='user.password' />
           </div>
           <div class="mb-3">
             <button (click)="login()" class="button-login">ENTRAR</button>

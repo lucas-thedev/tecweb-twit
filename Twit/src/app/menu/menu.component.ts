@@ -25,7 +25,8 @@ export class MenuComponent implements OnInit {
   }
 
   navigateToProfile() {
-    this.router.navigate(['/profile/1']);
+    let user = sessionStorage.getItem('user')
+    this.router.navigate([`/profile/${user}`]);
   }
 
   navigateToHome() {
