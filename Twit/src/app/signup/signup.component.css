@@ -61,6 +61,22 @@
     text-align: center;
   }
 
+  .Datepicker{
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .e-datepicker .e-date-wrapper{
+    border: 2px solid #9dd5f8 !important;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.e-date-wrapper .e-input-group-icon.e-date-icon.e-icons.e-active {
+  color: #08a0e9;
+}
+
   #return {
       position: absolute;
       top: 20px;

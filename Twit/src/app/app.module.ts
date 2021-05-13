@@ -17,6 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DatePickerModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -18,6 +18,17 @@
                 <p class="label">E-mail</p>
                 <input class="input-login" type="text" [(ngModel)]='person.email' />
               </div>
+              <div class="my-1 w-100">
+                <p class="label">Data Nascimento</p>
+                
+                <div class="control-section">
+                  <div id="control_wrapper">
+                    <div id="container" style="overflow:auto">
+                      <ejs-datepicker [value]='person.birthday' [cssClass] ='cssDate' [showTodayButton]="false"></ejs-datepicker>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <div class="my-1 w-100">
               <p class="label">Usuário</p>
               <input class="input-login" type="text" [(ngModel)]='person.username'/>

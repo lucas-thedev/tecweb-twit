@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   dropdownClass= '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.dropdownClass = 'list-dropdown d-none';
@@ -22,5 +23,7 @@ export class NavbarComponent implements OnInit {
       this.dropdownClass = 'list-dropdown d-block';
     }
   }
-
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
 }

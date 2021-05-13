@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { DatePicker } from '@syncfusion/ej2-calendars';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
     email: '',
     name: ''
   }
-
+cssDate: string = 'Datepicker';
   constructor(private router: Router, private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
