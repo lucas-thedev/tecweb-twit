@@ -28,16 +28,26 @@ cssDate: string = 'Datepicker';
   ngOnInit(): void {
   }
 
+  validateSignup(password:string){
+    let isvalid = false
+    if (password.length >= 6 && password.length <=20 && password.match(/(?=.*[0-9])/) && password.match(/(?=[^A-Za-z]*[A-Za-z])[ -~]*$/)){
+      isvalid = true
+      return isvalid
+    }
+    this.toastr.error('A senha criada não atende os requisitos, tente novamente e atente-se as regras.')
+    return isvalid
+  }
   
   create() {
-    this.http.post('http://localhost:3000/users', this.person).subscribe((res: any) => {
-      this.router.navigate(['/login']);
-      this.toastr.success('Cadastro realizado.', 'Sucesso!')
-    }, error => {
-      this.toastr.error('Houve algum erro. Tente mais tarde.')
-
-    });
-    
+    if(this.validateSignup(this.person.password)){
+      this.http.post('http://localhost:3000/users', this.person).subscribe((res: any) => {
+        this.router.navigate(['/login']);
+        this.toastr.success('Cadastro realizado.', 'Sucesso!')
+      }, error => {
+        this.toastr.error('Houve algum erro. Tente mais tarde.')
+  
+      });
+    }
   }
 
   
