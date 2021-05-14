@@ -84,3 +84,8 @@
 
       cursor: pointer;
   }
+
+  .password-rules {
+    font-size: 10px;
+    color: rgb(90, 90, 90);
+  }
