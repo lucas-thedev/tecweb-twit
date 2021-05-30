@@ -53,3 +53,13 @@ img {
     text-align: center;
     padding: 5px;
   } 
+
+
+button#follow {
+  background-color: #1b86f9;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  width: 20%;
+}

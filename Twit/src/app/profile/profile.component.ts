@@ -30,12 +30,25 @@ export class ProfileComponent implements OnInit {
     let url = this.router.url.split('/')
 
     this.http.get(`http://localhost:3000/users/${url[url.length - 1]}`).subscribe((res: any) => {
+      console.log('res: ', res)
       this.person = res[0]
     });
     this.http.get(`http://localhost:3000/twit/${url[url.length - 1]}`).subscribe((res: any) => {
       const twits = res.slice(0,50)
       this.posts = twits
     });
+  }
+
+  follow(): void {
+    let url = this.router.url.split('/')
+    const idFollowing = url[url.length - 1]
+    let idUser = sessionStorage.getItem('user')
+
+    if (idFollowing && idUser) {
+      this.http.post(`http://localhost:3000/follow/${idUser}/${idFollowing}`, {}).subscribe((res: any) => {
+      console.log('res: ', res)
+    });
+    }
   }
 
 }

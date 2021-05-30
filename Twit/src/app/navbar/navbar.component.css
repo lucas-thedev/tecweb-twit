@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 
-div.menu-dropdown.menu-icon input {
+div#search input {
   border-radius: 100px;
   border: none;
   outline: none;
@@ -42,9 +42,9 @@ div.menu-dropdown.menu-icon input {
   box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
   padding: 7px 20px;
   font-size: 11px;
-  width: calc(100% - 40px);
-  
+  width: 80%;
+  margin-right: 8px;
 }
-div.menu-dropdown.menu-icon input::placeholder{
-text-align: center;
+div#search input::placeholder{
+  text-align: center;
 }

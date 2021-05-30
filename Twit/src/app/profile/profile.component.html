@@ -15,6 +15,7 @@
         <p>
           {{ person.biograph }}
         </p>
+        <button id="follow" (click)="follow()">Seguir</button>
       </div>
     </div>
     <app-post *ngIf="posts.length>0" [posts]="posts"></app-post>

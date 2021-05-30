@@ -4,10 +4,12 @@
       <img src="assets/icons/logo-white.svg" width="30" class="icon"/>
       <h2 class="title my-0 mx-3">TWIT</h2>
     </div>
+    <div id="search">
+      <input type="text" name="search" [(ngModel)]="searchText"  placeholder="Buscar" />
+      <img src="../../assets/icons/search.svg" (click)="search()" width="25"/>
+    </div>
     <div class="menu-dropdown menu-icon" (click)="callMenu()">
       <img src="assets/icons/list.svg" width="30" class="icon d-block d-lg-none" />
-      <input type="text" name="search" placeholder="Pesquisar um amigo" />
-      <img src="../../assets/icons/search.svg" width="25"/>
       <div [ngClass]="dropdownClass">
         <app-menu></app-menu>
       </div>

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
       if (res.status === 200 ) {
         
         sessionStorage.setItem("user", res.data[0].id_user);
+        sessionStorage.setItem("username", res.data[0].username);
         this.router.navigate(['/home']);
         this.toastr.success('Sucesso!', 'Login realizado.')
       }
