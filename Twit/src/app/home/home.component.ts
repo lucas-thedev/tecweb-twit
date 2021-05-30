@@ -15,8 +15,9 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/twit').subscribe((res: any) => {
-      this.posts = res
+    let user = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
+    this.http.get(`http://localhost:3000/twit/with-followers/${user}`).subscribe((res: any) => {
+      this.posts = res.data
     })
   }
 
