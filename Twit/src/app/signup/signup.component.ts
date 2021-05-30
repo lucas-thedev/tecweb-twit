@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
     created_at: '',
     biograph: '',
     birthday: '',
-    perfil_pic: 'assets/girl.png',
+    perfil_pic: 'assets/Imagem_padrão_usuario.png',
     password: '',
     email: '',
     name: ''

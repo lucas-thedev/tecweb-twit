@@ -35,3 +35,21 @@
   color: #616161;
   margin: 0;
 }
+img {
+  object-fit: cover;
+}
+.h1sem_post {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 35%;
+  }
+  .sem_post {
+    border-radius: 5px;
+    border: 2px solid #1b86f9;
+    background-color:rgb(186, 221, 245);
+    font-size: 110%;
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+  } 
