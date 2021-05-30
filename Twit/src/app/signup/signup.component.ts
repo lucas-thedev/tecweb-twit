@@ -44,7 +44,8 @@ cssDate: string = 'Datepicker';
         this.router.navigate(['/login']);
         this.toastr.success('Cadastro realizado.', 'Sucesso!')
       }, error => {
-        this.toastr.error('Houve algum erro. Tente mais tarde.')
+        console.log(error)
+        this.toastr.error(error.error)
   
       });
     }

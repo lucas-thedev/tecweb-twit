@@ -33,8 +33,8 @@ export class ProfileComponent implements OnInit {
       this.person = res[0]
     });
     this.http.get(`http://localhost:3000/twit/${url[url.length - 1]}`).subscribe((res: any) => {
-      
-      this.posts = res
+      const twits = res.slice(0,50)
+      this.posts = twits
     });
   }
 
