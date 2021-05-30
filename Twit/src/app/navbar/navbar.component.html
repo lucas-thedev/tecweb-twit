@@ -6,6 +6,8 @@
     </div>
     <div class="menu-dropdown menu-icon" (click)="callMenu()">
       <img src="assets/icons/list.svg" width="30" class="icon d-block d-lg-none" />
+      <input type="text" name="search" placeholder="Pesquisar um amigo" />
+      <img src="../../assets/icons/search.svg" width="25"/>
       <div [ngClass]="dropdownClass">
         <app-menu></app-menu>
       </div>
