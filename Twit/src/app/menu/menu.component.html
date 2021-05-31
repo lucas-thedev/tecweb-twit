@@ -22,5 +22,11 @@
                 <span>20+</span>
             </div>
         </li>
+        <li (mouseenter)="toggleLogoutIcon('over')" (mouseleave)="toggleLogoutIcon('notOver')" (click)="navigateToLogin()" id="logout">
+            <div class = 'IconeTexto'>
+                <img [src]="imgLogout" width="20">
+                <span class="texto-do-meio">Sair</span>
+            </div>
+        </li>
     </ul>
 </div>

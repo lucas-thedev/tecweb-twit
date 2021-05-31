@@ -5,3 +5,35 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+
+div#search {
+  width: 100%;
+}
+
+div#search input {
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  flex: 1;
+  color: #202841;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+  padding: 7px 20px;
+  font-size: 11px;
+  margin-right: 8px;
+}
+div#search input::placeholder{
+  text-align: center;
+}
+
+div#search img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+@media only screen and(max-width: 600px) {
+  div#search {
+    width: 20%;
+  }
+}

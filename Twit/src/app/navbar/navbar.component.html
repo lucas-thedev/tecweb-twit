@@ -4,9 +4,11 @@
       <img src="assets/icons/logo-white.svg" width="30" class="icon"/>
       <h2 class="title my-0 mx-3">TWIT</h2>
     </div>
-    <div id="search">
-      <input type="text" name="search" [(ngModel)]="searchText"  placeholder="Buscar" />
-      <img src="../../assets/icons/search.svg" (click)="search()" width="25"/>
+    <div class="log-out">
+      <div id="logout-div">
+        <span>{{username.toUpperCase()}}</span>  
+        <img id="logout-icon" src="assets/icons/log-out-white.svg" width="30" class="icon" (click) = 'navigateToLogin()'/>
+      </div>
     </div>
     <div class="menu-dropdown menu-icon" (click)="callMenu()">
       <img src="assets/icons/list.svg" width="30" class="icon d-block d-lg-none" />
