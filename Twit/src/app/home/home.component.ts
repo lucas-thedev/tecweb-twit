@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {IPost} from '../types/index'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,9 @@ export class HomeComponent implements OnInit {
 
   posts: IPost[] = [];
 
+  searchText: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     let user = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
@@ -20,5 +22,17 @@ export class HomeComponent implements OnInit {
       this.posts = res.data
     })
   }
+
+  
+  search() {
+    this.http.get(`http://localhost:3000/users/username/${this.searchText}`).subscribe((res: any) => {
+     if (res.status === 200 ) {
+       console.log('sucesso ao buscar: ', res[0].id_user)
+     }
+     this.router.navigate([`/profile/${res[0].id_user}`])
+   }, error => {
+     console.log('erro ao buscar: ', error)
+   });
+ }
 
 }

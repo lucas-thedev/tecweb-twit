@@ -51,4 +51,11 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  isFollowEnabled(): boolean {
+    const url = this.router.url.split('/')
+    const urlId = url[url.length - 1]
+    const idUser = sessionStorage.getItem('user')
+    return idUser !== urlId 
+  }
+
 }

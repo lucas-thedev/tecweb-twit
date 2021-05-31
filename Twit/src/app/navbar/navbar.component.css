@@ -33,18 +33,29 @@
   cursor: pointer;
 }
 
-div#search input {
-  border-radius: 100px;
-  border: none;
-  outline: none;
-  flex: 1;
-  color: #202841;
-  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
-  padding: 7px 20px;
-  font-size: 11px;
-  width: 80%;
-  margin-right: 8px;
+.log-out {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
 }
-div#search input::placeholder{
-  text-align: center;
+
+#logout-div {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+#logout-div span {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  #logout-icon {
+    display: none;
+  }
+
+  div#logout-div span {
+    margin-right: 50px;
+  }
 }

@@ -10,6 +10,7 @@ export class MenuComponent implements OnInit {
 
   imgFeed:string = '../../assets/icons/feed.svg';
   imgUser:string = '../../assets/icons/user.svg';
+  imgLogout:string = '../../assets/icons/log-out.svg';
 
   constructor(private router: Router) { }
 
@@ -24,6 +25,10 @@ export class MenuComponent implements OnInit {
     this.imgUser = state === 'over' ? '../../assets/icons/user-white.svg' : '../../assets/icons/user.svg';
   }
 
+  toggleLogoutIcon(state:string) {
+    this.imgLogout = state === 'over' ? '../../assets/icons/log-out-white.svg' : '../../assets/icons/log-out.svg';
+  }
+
   navigateToProfile() {
     let user = sessionStorage.getItem('user')
     this.router.navigate([`/profile/${user}`]);
@@ -31,6 +36,10 @@ export class MenuComponent implements OnInit {
 
   navigateToHome() {
     this.router.navigate(['/home']);
+  }
+
+  navigateToLogin() {
+    this.router.navigate(['/login'])
   }
 
 }

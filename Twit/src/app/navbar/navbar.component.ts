@@ -11,34 +11,34 @@ export class NavbarComponent implements OnInit {
 
   dropdownClass= '';
   searchText = "";
+  username = "";
+  logoutVisible = true;
 
   constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
+    let username = sessionStorage.getItem('username') ? sessionStorage.getItem('username') : ""
+    this.username = username || "";
     this.dropdownClass = 'list-dropdown d-none';
+    this.logoutVisible = true;
   }
 
   callMenu() { 
     if (this.dropdownClass === 'list-dropdown d-block') {
       this.dropdownClass = 'list-dropdown d-none';
+      this.logoutVisible = true;
     } else if (this.dropdownClass === 'list-dropdown d-none') {
       this.dropdownClass = 'list-dropdown d-block';
+      this.logoutVisible = false;
     }
-  }
-
-  search() {
-     this.http.get(`http://localhost:3000/users/username/${this.searchText}`).subscribe((res: any) => {
-      if (res.status === 200 ) {
-        console.log('sucesso ao buscar: ', res[0].id_user)
-      }
-      this.router.navigate([`/profile/${res[0].id_user}`])
-    }, error => {
-      console.log('erro ao buscar: ', error)
-    });
   }
 
   navigateToHome() {
     this.router.navigate(['/home']);
   }
+
+  navigateToLogin() {
+    this.router.navigate(['/login'])
+  }
 }
- 
+
