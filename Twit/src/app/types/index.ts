@@ -8,5 +8,6 @@ export interface IPost {
     id_twiit_parent?: string,
     updated_at: string,
     username?: string,
-    id_twiit?: number
+    id_twiit?: number,
+    retwiitedFrom?: string;
 }

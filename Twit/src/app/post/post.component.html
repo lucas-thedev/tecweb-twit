@@ -6,8 +6,11 @@
       </figure>
       <div class="column">
         <p>
-          <strong style="color: black">{{ post.username }}</strong> shared a
-          <strong>post</strong>
+          <strong style="color: black">{{ post.username }}
+          </strong> {{!post.retwiitedFrom ? 'twiited a' : 'retwiited from'}}
+
+          <strong *ngIf="!post.retwiitedFrom">post</strong>
+          <strong *ngIf="post.retwiitedFrom">{{post.retwiitedFrom}}</strong>
         </p>
         <span>6 hours ago</span>
       </div>
