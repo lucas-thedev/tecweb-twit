@@ -35,3 +35,22 @@ body {
     border-radius: 4px;
     box-shadow: inset 7px 10px 12px #f0f0f0;
 }
+
+
+.submit-btn {
+    color: white;
+    background-color: #08a0e9;
+    border: none;
+    height: 34px;
+    width: 100px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:disabled {
+    background-color: #70ccf6;
+    border: 2px solid #08a0e9;
+    cursor: initial;
+  }

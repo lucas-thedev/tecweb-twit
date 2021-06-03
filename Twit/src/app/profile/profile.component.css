@@ -54,12 +54,26 @@ img {
     padding: 5px;
   } 
 
-
-button#follow {
-  background-color: #1b86f9;
-  outline: none;
-  border: none;
-  color: white;
+button#not-following {
   border-radius: 10px;
   width: 20%;
+  border: 1px solid #1b86f9;
+  background: transparent;
+  color: #1b86f9;
+}
+
+button#following {
+  border-radius: 10px;
+  width: 20%;
+  border: 1px solid #1b86f9;
+  background-color: #1b86f9;
+  color: #FFF;
+}
+
+div#user-wrapper {
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.17);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

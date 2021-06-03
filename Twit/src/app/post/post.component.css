@@ -3,9 +3,12 @@
 }
 
 .post {
-  margin: 50px 0;
   background-color: white;
   border-radius: 6px;
+}
+
+.post:not(:first-child) {
+  margin: 50px 0;
 }
 
 header {

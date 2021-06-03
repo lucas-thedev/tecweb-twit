@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {IPost} from '../types/index'
+import {IPost, IFollower} from '../types/index'
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -23,38 +24,94 @@ export class ProfileComponent implements OnInit {
 
   posts: IPost[] = [];
 
-  constructor(private http: HttpClient, private router: Router) { }
+  isFollowing: boolean = false;
+  idProfileUser: number = 0;
+  followers: IFollower[] = [];
+  loggedFollowers: IFollower[] = [];
+  followersCount = 0
+
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-
     let url = this.router.url.split('/')
 
-    this.http.get(`http://localhost:3000/users/${url[url.length - 1]}`).subscribe((res: any) => {
-      console.log('res: ', res)
+    const idUser = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
+
+    this.idProfileUser = +url[url.length - 1]
+
+    this.http.get(`http://localhost:3000/users/${this.idProfileUser}`).subscribe((res: any) => {
       this.person = res[0]
     });
-    this.http.get(`http://localhost:3000/twit/${url[url.length - 1]}`).subscribe((res: any) => {
+    this.http.get(`http://localhost:3000/twit/${this.idProfileUser}`).subscribe((res: any) => {
       const twits = res.slice(0,50)
       this.posts = twits
     });
+
+    this.getLoggedFollowers()
+    this.getFollowers()
   }
 
   follow(): void {
-    let url = this.router.url.split('/')
-    const idFollowing = url[url.length - 1]
-    let idUser = sessionStorage.getItem('user')
+    const idUser = sessionStorage.getItem('user')
 
-    if (idFollowing && idUser) {
-      this.http.post(`http://localhost:3000/follow/${idUser}/${idFollowing}`, {}).subscribe((res: any) => {
-      console.log('res: ', res)
-    });
+    if (this.idProfileUser && idUser) {
+      if (this.isFollowing){
+        this.http.get(`http://localhost:3000/follow/${idUser}/${this.idProfileUser}`, {}).subscribe((res: any) => {
+          this.getLoggedFollowers()
+          this.getFollowers()
+        }, err => {
+          console.log(err)
+        });
+      } else {
+        this.http.post(`http://localhost:3000/follow/${idUser}/${this.idProfileUser}`, {}).subscribe((res: any) => {
+          this.getLoggedFollowers()
+          this.getFollowers()
+        }, err => {
+          console.log(err)
+        });
+      } 
     }
   }
 
-  isFollowEnabled(): boolean {
+  getFollowers():void {
+    this.http.get(`http://localhost:3000/follow/${this.idProfileUser}`).subscribe((res: any) => {
+    console.log('res backend: ', res)
+    this.followers = res.data
+    console.log('followers: ', this.followers)
+    this.isFollowing = this.checkIfUserIsInFollowersList()
+    this.followersCount = res.data.length
+    }, err => {
+      this.toastr.error(err.error, 'Erro!' )
+    });
+  }
+
+  getLoggedFollowers() {
+    const loggedUserId = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
+
+    this.http.get(`http://localhost:3000/follow/${loggedUserId}`).subscribe((res: any) => {
+      this.followers = res.data
+      this.loggedFollowers = res.data
+      this.isFollowing = this.checkIfUserIsInFollowersList()
+      }, err => {
+        this.toastr.error(err.error, 'Erro!' )
+      });
+  }
+  
+  checkIfUserIsInFollowersList(): boolean {
+    const hasFollowerInList = this.loggedFollowers.some(follower => follower.id_following === this.idProfileUser)
+    return hasFollowerInList
+  }
+
+  getFollowerCount (): number {
+    console.log('AAA: ', this.loggedFollowers, this.followers)
+    return this.followers.length
+  }
+
+  isLoggedUserProfile(): boolean {
     const url = this.router.url.split('/')
     const urlId = url[url.length - 1]
     const idUser = sessionStorage.getItem('user')
+    this.followers = this.loggedFollowers
     return idUser !== urlId 
   }
 
