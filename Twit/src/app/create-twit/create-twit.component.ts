@@ -41,8 +41,9 @@ export class CreateTwitComponent implements OnInit {
     this.tweet.is_comment = 'false'
 
     this.http.post(`http://localhost:3000/twit/${user}`, this.tweet).subscribe((res: any) => {
-      
+    
     });
+
   }
 
 }

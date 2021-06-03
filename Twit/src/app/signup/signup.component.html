@@ -32,9 +32,10 @@
               <p class="label">Usuário</p>
               <input class="input-login" type="text" [(ngModel)]='person.username'/>
             </div>
-            <div class="my-1 mb-4">
+            <div class="my-1 mb-4 input-wrapper">
               <p class="label">Senha</p>
-              <input class="input-login" type="password" [(ngModel)]='person.password' />
+              <input class="input-login" [type]="passwordInputType" [(ngModel)]='person.password' />
+              <img [src]="passwordEyeImg" (click)="showOrHidePassword()" width="20" id="eye-icon"/>
                <p class="password-rules">
                 • A senha deve possuir pelo menos uma letra.<br>
                 • A senha deve possuir pelo menos um número.

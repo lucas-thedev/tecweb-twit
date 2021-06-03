@@ -58,3 +58,14 @@ p {
   font-size: small;
   text-align: center;
 }
+
+.input-wrapper {
+  position: relative;
+}
+
+#eye-icon {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+  cursor: pointer;
+}

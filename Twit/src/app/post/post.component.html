@@ -6,8 +6,11 @@
       </figure>
       <div class="column">
         <p>
-          <strong style="color: black">{{ post.username }}</strong> shared a
-          <strong>post</strong>
+          <strong style="color: black">{{ post.username }}
+          </strong> {{!post.retwiitedFrom ? 'twiited a' : 'retwiited from'}}
+
+          <strong *ngIf="!post.retwiitedFrom">post</strong>
+          <strong *ngIf="post.retwiitedFrom">{{post.retwiitedFrom}}</strong>
         </p>
         <span>6 hours ago</span>
       </div>
@@ -39,7 +42,7 @@
         <span>20</span>
       </div>
       <div>
-        <img src="../../assets/retwitt.svg" alt="retwitts" />
+        <img src="../../assets/retwitt.svg" alt="retwitts" (click)="retwitt(post)" />
         <span> {{ post.count_retwiit }} </span>
       </div>
     </div>
