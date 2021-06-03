@@ -16,9 +16,20 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
+  passwordEyeImg = "assets/icons/eye-open.svg"
+  passwordInputType = "password"
+
   constructor(private router: Router, private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.passwordEyeImg = "assets/icons/eye-open.svg"
+    this.passwordInputType = "password"
+  }
+
+  showOrHidePassword(): void {
+    this.passwordEyeImg = this.passwordEyeImg === "assets/icons/eye-open.svg" ? "assets/icons/eye-closed.svg" :"assets/icons/eye-open.svg"  
+
+    this.passwordInputType = this.passwordInputType === "password" ? "text" : "password"
   }
 
   login() { 

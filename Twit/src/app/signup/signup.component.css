@@ -89,3 +89,14 @@
     font-size: 10px;
     color: rgb(90, 90, 90);
   }
+
+  .input-wrapper {
+    position: relative;
+  }
+  
+  #eye-icon {
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    cursor: pointer;
+  }

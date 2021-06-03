@@ -13,9 +13,10 @@
             <p class="label">Usuário</p>
             <input class="input-login" type="text" [(ngModel)]='user.username' />
           </div>
-          <div class="mb-4">
+          <div class="mb-4 input-wrapper">
             <p class="label">Senha</p>
-            <input class="input-login" type="password" [(ngModel)]='user.password' />
+            <input class="input-login" [type]="passwordInputType" [(ngModel)]='user.password'>
+            <img [src]="passwordEyeImg" (click)="showOrHidePassword()" width="20" id="eye-icon"/>
           </div>
           <div class="mb-3">
             <button (click)="login()" class="button-login">ENTRAR</button>
