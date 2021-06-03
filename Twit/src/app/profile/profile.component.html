@@ -15,7 +15,7 @@
         <p>
           {{ person.biograph }}
         </p>
-        <button *ngIf="isFollowEnabled()" id="follow" (click)="follow()">Seguir</button>
+        <button [id]="isFollowing ? 'following' : 'not-following'" *ngIf="isFollowEnabled()" (click)="follow()">{{isFollowing ? 'Seguindo': 'Seguir'}}</button>
       </div>
     </div>
     <app-post *ngIf="posts.length>0" [posts]="posts"></app-post>

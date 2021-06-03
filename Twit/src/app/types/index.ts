@@ -11,3 +11,10 @@ export interface IPost {
     id_twiit?: number,
     retwiitedFrom?: string;
 }
+
+export interface IFollower {
+    "id_user": number,
+    "id_following": number,
+    "created_at": string,
+    "updated_at": string
+}

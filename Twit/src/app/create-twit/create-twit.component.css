@@ -35,6 +35,13 @@ textarea {
   border-radius: 6px;
   font-weight: bold;
   font-size: 12px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: #70ccf6;
+  border: 2px solid #08a0e9;
+  cursor: initial;
 }
 
 #length {
