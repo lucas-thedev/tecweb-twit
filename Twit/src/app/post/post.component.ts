@@ -3,11 +3,13 @@ import {IPost} from '../types/index'
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
+  providers: [DatePipe]
 })
 
 export class PostComponent implements OnInit {
@@ -16,15 +18,10 @@ export class PostComponent implements OnInit {
   @Input() posts: IPost[] = [];
   storage = []
 
-  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService) { 
+  constructor(private http: HttpClient, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { 
   }
 
-  ngOnInit(): void {
-    
-  }
-
-  updateLikeCount(index: number) {
-    this.posts[index].count_likes = this.posts[index].count_likes === 1 ? 0 : 1;
+  ngOnInit(): void {  
   }
 
   retwitt(post: IPost): void {
@@ -45,6 +42,23 @@ export class PostComponent implements OnInit {
         this.toastr.error(error.error)
       });
 
+  }
+
+  formatDate(date: string): string {
+    return this.datePipe.transform(date, 'dd/MM/yyyy HH:mm:ss', "GMT-6") || "";
+  }
+
+  like(post: IPost) {
+    const idPost = post.id_twiit
+    const idUser = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
+
+
+    this.http.post(`http://localhost:3000/like/${idUser}/${idPost}`, {}).subscribe((res: any) => {
+      this.toastr.success('Curtida realizada.', 'Sucesso!')
+    }, error => {
+      console.log(error)
+      this.toastr.error(error.error)
+    });
   }
 
 }
