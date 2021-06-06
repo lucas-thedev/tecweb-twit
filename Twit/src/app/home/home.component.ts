@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  updatePosts():void {
+    this.ngOnInit();
+  }
+  
   ngOnInit(): void {
     let user = sessionStorage.getItem('user') ? sessionStorage.getItem('user') : 0
     this.http.get(`http://localhost:3000/twit/with-followers/${user}`).subscribe((res: any) => {
