@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {IPost} from '../types/index'
 import { HttpClient } from '@angular/common/http';
 
@@ -19,6 +19,9 @@ export class CreateTwitComponent implements OnInit {
     is_comment: '',
     updated_at: '',
   }
+
+  
+  @Input() updatePosts: Function = () => console.log('updated');
 
   constructor(private http: HttpClient) {
   }
@@ -44,6 +47,10 @@ export class CreateTwitComponent implements OnInit {
     
     });
 
-  }
+    if (this.updatePosts) {
+      this.updatePosts()
+    }
 
+  }
+ 
 }

@@ -16,6 +16,7 @@ export class PostComponent implements OnInit {
 
 
   @Input() posts: IPost[] = [];
+  @Input() updatePosts: Function = () => console.log('updated');
   storage = []
 
   constructor(private http: HttpClient, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { 
@@ -59,6 +60,10 @@ export class PostComponent implements OnInit {
       console.log(error)
       this.toastr.error(error.error)
     });
+
+    if (this.updatePosts) {
+      this.updatePosts()
+    }
   }
 
 }
