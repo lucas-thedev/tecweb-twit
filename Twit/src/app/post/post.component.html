@@ -28,14 +28,14 @@
         <img
           src="../../assets/blue-heart.svg"
           alt="curtir"
-          *ngIf="post.count_likes === 0"
+          *ngIf="liked === 0"
         />
         <img
-         *ngIf="post.count_likes > 0"
+         *ngIf="liked === 1"
           src="../../assets/liked.svg"
           alt="curtir"
         />
-        <span>{{ post.count_likes }}</span>
+        <span>{{ countlikes }}</span>
       </div>
       <div>
         <img src="../../assets/comments.svg" alt="comentários" />
